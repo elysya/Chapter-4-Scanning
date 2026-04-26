@@ -32,3 +32,29 @@
 ## QUESTION 2
 
 ### Analyse packet2.pcap and find the flag.
+
+> Export FTP file.
+
+![picture 1](images/Q2Picture2.png)
+
+<br>
+
+> Open the file using mousepad.
+
+![picture 1](images/Q2Picture3.png)
+
+> Discovered a URL.
+
+<br>
+
+> Visit the URL and discover Google Docs that contains pigpen code.
+
+![picture 1](images/Q2Picture4.png)
+
+<br>
+
+> Use an online pigpen decoder tool.
+
+![picture 1](images/Q2Picture5.png)
+
+> Retrieve a list of possible flags, but the most logical one is "ex machina ava".
