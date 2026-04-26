@@ -97,3 +97,42 @@
 | 3. | OpenSSH 5.3p1 | Vulnerable to username enumeration, allowing attackers to verify valid accounts before launching brute-force attacks. |
 | 4. | NetBIOS (139) | Risk of information disclosure where attackers can see machine names and domain details. |
 | 5. | SMB (445) | Critical risk of EternalBlue (MS17-010), allowing full, unauthenticated remote code execution (RCE). |
+
+<br>
+
+> 3. Which one is the highest risk and why?
+
+Port 445 (SMB) is the highest risk because it allows for unauthenticated remote code execution (RCE) via the EternalBlue exploit. Unlike service-specific backdoors, Port 445 provides a direct path to Kernel-level access, granting total control over the operating system. It is also the most critical vector for lateral movement, as it allows attackers to spread malware or harvest credentials across an entire network infrastructure.
+
+<br>
+
+> 4. What attack path can be built from this?
+
+| No. | Phase | Action |
+| :--- | :--- | :--- |
+| 1. | Initial Access | Exploit vsftpd backdoor or EternalBlue (SMB) to gain a remote shell.|
+| 2. | Privilege Escalation | Use Juicy Potato or similar exploits to reach system authority. |
+| 3. | Credential Harvesting | Dump SAM or LSASS memory to steal password hashes and cleartext keys. |
+| 4. | Lateral Movement | Use recovered credentials to pivot to other network hosts via SSH or SMB. |
+
+<br>
+
+> 5. What should be the remediation?
+
+| No. | Strategy | Action |
+| :--- | :--- | :--- |
+| 1. | Upgrade and patch | Move to a modern OS or apply the MS17-010 patch immediately.|
+| 2. | Service update| Update Apache to 2.4x and replace vsftpd 2.3.4 with a secure version or SFTP. |
+| 3. | Protocol security | Disable SMBv1 and other insecure legacy protocols. |
+| 4. | Access control | Use firewalls and network segmentation to limit access to authorized IPs. |
+| 5. | Hardening | Close all non-essential ports and disable unused services like Port 21 (FTP). |
+
+
+<br>
+
+## QUESTION 4
+
+### Identify the OS (OS Fingerprinting) - TTL
+
+Image 1
+
