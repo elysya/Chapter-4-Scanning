@@ -136,3 +136,70 @@ Port 445 (SMB) is the highest risk because it allows for unauthenticated remote 
 
 Image 1
 
+![picture 1](images/Q4Picture1.png)
+
+> Answer: The likely OS for TTL value = 64 is Fedora 34, which is a Linux distribution.
+
+<br>
+
+Image 2
+
+![picture 1](images/Q4Picture2.png)
+
+> Answer: The likely OS for TTL value = 255 might be Solaris or OpenBSD and the TTL value = 1 indicates a packet that has reached its limit and is about to be dropped by a router to prevent infinite loops.
+
+<br>
+
+Image 3
+
+![picture 1](images/Q4Picture3.png)
+
+> Answer: The likely OS for the TTL value = 128 is Windows.
+
+<br>
+
+## QUESTION 5
+
+### Analyse the Nessus file.
+
+Upload to your nessus (Network_Scan.nessus) and analyse the files. Focus on critical or high findings that were identifies in analysis named “Ghostcat”.
+
+<br>
+
+1.	What is the affected Port number
+
+   > The affected Port number is 8009 / tcp / ajp13.
+
+<br>
+
+2. What is the Affected protocol?
+
+   > AJP (Apache JServ Protocol).
+
+<br>
+
+3.	What is the CVSS Score of vulnerability found
+
+   > The CVSS Score of vulnerability found is 9.8.
+
+<br>
+
+4.	Can you find any exploit related to this vulnerability?
+
+   > Yes, the description mentions File read/inclusion and potential Remote Code Execution (RCE).
+
+<br>
+
+5.	Find CVE for this vulnerability.
+
+   > The CVE for this vulnerability is CVE-2020-1938.
+
+<br>
+
+Screenshot:
+
+![picture 1](images/Q5Picture1.png)
+
+<br>
+
+![picture 1](images/Q5Picture2.png)
